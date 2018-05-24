@@ -24,6 +24,7 @@ $ ssh-keygen -t rsa
 $ git clone https://github.com/AllenFang/lerna-tutorial-example.git
 $ cd lerna-tutorial-example
 $ cp ~/.ssh/id_rsa.pub ./docker/git-server/keys
+$ cd docker
 $ docker-compose up -d
 ```
 After docker compose start, `gitserver` and `npmserver` will run in the background then you need to type following commands to launch to `workspace` container to do further setup: 
