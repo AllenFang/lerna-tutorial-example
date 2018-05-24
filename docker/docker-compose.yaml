@@ -24,7 +24,6 @@ services:
     ports:
       - "4873:4873"
     volumes:
-        # - "../examples:/home/verdaccio/lerna-example"
         - "./conf:/verdaccio/conf"
 
   workspace:
@@ -33,9 +32,6 @@ services:
     container_name: workspace
     networks:
       - lernaexample
-    # depends_on:
-    #   - npmserver
-    #   - gitserver
     volumes:
       - ./git-server/keys:/root/.ssh
     links:
