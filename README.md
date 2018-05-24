@@ -67,3 +67,6 @@ After above comment, lerna will ask you auto detect what packages had changes si
 Following is the result screenshot:
 
 ![lerna publish result](https://i.imgur.com/NDA5INz.png)
+
+When you go to http://localhost:4873, you will see following result:
+![npm publish result](https://i.imgur.com/GRWGYmD.png)
