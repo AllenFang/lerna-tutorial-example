@@ -24,6 +24,7 @@ $ ssh-keygen -t rsa
 $ git clone https://github.com/AllenFang/lerna-tutorial-example.git
 $ cd lerna-tutorial-example
 $ cp ~/.ssh/id_rsa.pub ./docker/git-server/keys
+$ cp ~/.ssh/id_rsa ./docker/git-server/keys
 $ cd docker
 $ docker-compose up -d
 ```
