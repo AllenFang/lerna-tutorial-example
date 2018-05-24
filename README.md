@@ -5,8 +5,11 @@ This repo give you an independent enviornment to play with [lerna](https://githu
 You will have following components after setup:
 
 * NPM server(We use [verdaccio](https://github.com/verdaccio/verdaccio))
+  * `npmserver` is docker dontainer name
 * GIT server(Simple git server on SSH and already contain a bare repository)
+  * `gitserver` is docker dontainer name
 * Workspace(Git, Node.js and NPM installed), develop/testing/deploy/publish here!!
+  * `workspace` is docker dontainer name
 
 ## Setup
 
@@ -16,14 +19,14 @@ You will have following components after setup:
 $ cd ~
 $ mkdir .ssh
 $ ssh-keygen -t rsa
-#######
+######################################################
 
 $ git clone https://github.com/AllenFang/lerna-tutorial-example.git
 $ cd lerna-tutorial-example
 $ cp ~/.ssh/id_rsa.pub ./docker/git-server/keys
 $ docker-compose up -d
 ```
-After installation, 
+After docker compose start, `gitserver` and `npmserver` will run in the background then you need to type following commands to launch to `workspace` container to do further setup: 
 
 `docker-compose run workspace sh`
 
@@ -42,7 +45,7 @@ $ git config --global user.email "you@example.com"  # Keyin your email
 $ git config --global user.name "Your Name"  # Keyin your username
 ```
 
-### Setup Package
+### Setup Dummy Project
 
 ```sh
 $ git clone ssh://git@gitserver/git-server/repos/examples.git
