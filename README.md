@@ -1,6 +1,6 @@
 # Lerna Tutorial Example
 
-This repo give you an independent enviornment to play with [lerna](https://github.com/lerna/lerna). We leverage on Docker to provide you a gitserver and a lightweight npm server so that you can easy to understadn and learn how lerna publish, release and so on. 
+This repo give you an independent enviornment to play with [lerna](https://github.com/lerna/lerna). We leverage on Docker to provide you a gitserver and a lightweight npm server so that you can easy to understand and learn how lerna publish, release and so on. 
 
 You will have following components after setup:
 
