@@ -1,0 +1,43 @@
+version: '3'
+
+networks:
+  lernaexample:
+
+services:
+  gitserver:
+    image: jkarlos/git-server-docker
+    restart: always
+    container_name: gitserver
+    networks:
+      - lernaexample
+    ports:
+      - "2222:22"
+    volumes:
+      - ./git-server/keys:/git-server/keys
+      - ./git-server/repos:/git-server/repos
+
+  npmserver:
+    image: verdaccio/verdaccio:latest
+    container_name: npmserver
+    networks:
+      - lernaexample
+    ports:
+      - "4873:4873"
+    volumes:
+        # - "../examples:/home/verdaccio/lerna-example"
+        - "./conf:/verdaccio/conf"
+
+  workspace:
+    build:
+      context: .
+    container_name: workspace
+    networks:
+      - lernaexample
+    # depends_on:
+    #   - npmserver
+    #   - gitserver
+    volumes:
+      - ./git-server/keys:/root/.ssh
+    links:
+      - gitserver
+      - npmserver
